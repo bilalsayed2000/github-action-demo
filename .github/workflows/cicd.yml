@@ -12,14 +12,25 @@ jobs:
         run: echo "Code cloned from Github"
 
   deploy:
+    needs: code
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Code in Docker
         run: echo "Code deployed to container 9jncwhiefgyrfgvdgsjf"
 
   test:
+    needs: [code, deploy]
     runs-on: ubuntu-latest
     steps:
-      - name: Make server live
-        run: echo "Server is live and running"
+      - name: Make necessary testings on applications
+        run: echo "Tests completed on containerized Application"
+
+  production:
+    needs: [code,deploy,test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bring production live
+        run: echo "Application is live and running"
+
+
         
