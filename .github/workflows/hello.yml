@@ -2,7 +2,7 @@ name: Hello workflow
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 jobs:
   greet:
     runs-on: ubuntu-latest
