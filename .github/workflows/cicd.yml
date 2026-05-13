@@ -1,0 +1,25 @@
+name: CICD
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        run: echo "Code cloned from Github"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Code in Docker
+        run: echo "Code deployed to container 9jncwhiefgyrfgvdgsjf"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make server live
+        run: echo "Server is live and running"
+        
