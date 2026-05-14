@@ -1,11 +1,11 @@
 name: Python linter
 
 on:
-  push:
-    branches: [master]
+push:
+branches: [master]
 
 jobs:
-  validate:
+validate:
     runs-on: ubuntu-latest
     strategy:
       matrix:
