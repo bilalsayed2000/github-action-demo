@@ -1,0 +1,21 @@
+name: Python linter
+
+on: push
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout code
+      uses: actions/checkout@v6
+
+    - name: setup python 3.13
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.13'
+      run: python app.py
+
+    - name: run dependencies
+      run: pip install requirements.txt
+
+    - name: run linter
+      run: flake8 app.py
